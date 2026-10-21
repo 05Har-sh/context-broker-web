@@ -1,4 +1,8 @@
-# Context Broker Web (`context-broker-web`)
+# Context Broker Web 
+
+<p align="center">
+  <img src="\public\logo.svg" alt="Context Broker Logo" width="200" />
+</p>
 
 [![Next.js](https://img.shields.io/badge/Next.js-16.1.7-black?style=flat-square&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.2.3-blue?style=flat-square&logo=react)](https://react.dev/)
@@ -195,4 +199,6 @@ npm run start
 2. **Commit Convention**: Follow standard Conventional Commits (`feat: ...`, `fix: ...`, `docs: ...`, `refactor: ...`).
 3. **Quality Gate**: Run `npm run lint` and `npm run build` locally to ensure there are no build or TypeScript errors before opening a Pull Request.
 
+---
 
+## Backend repository: [Link](https://github.com/05Har-sh/context-broker-api)
