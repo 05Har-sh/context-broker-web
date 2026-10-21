@@ -54,6 +54,8 @@ Modern microservice architectures generate fragmented alerts across multiple mon
   <img src="./public/architecture.png" alt="Context Broker Web Architecture" width="100%" />
 </p>
 
+The diagram above provides an overview of the frontend architecture. For a clearer view of the components and application flow, [view the full-resolution diagram on Google Drive](https://drive.google.com/file/d/1I6RhgrS_KfTiLinwKYYROVHWx5sXTmxv/view?usp=sharing).
+
 1. **Authentication**: Handled via `keycloak-js`. The client retrieves an OpenID Connect JWT token and automatically handles silent token refreshes with the Keycloak identity provider.
 2. **API Communication**: All backend requests are routed through a centralized API client (`src/lib/api/client.ts`) that injects the `Bearer` token and handles HTTP 401 retries with the Spring Boot REST backend.
 3. **App Services & SWR**: SWR manages client-side caching, background revalidation, and optimistic state updates across pages and components.
