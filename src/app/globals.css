@@ -1,26 +1,237 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-secondary-container: #a3f69c;
+  --color-primary-container: #e7e2d9;
+  --color-on-surface-variant: #596061;
+  --color-on-primary-fixed: #413f39;
+  --color-tertiary-fixed: #f4f3f3;
+  --color-surface: #f9f9f9;
+  --color-on-background: #2d3435;
+  --color-on-tertiary-fixed-variant: #656666;
+  --color-tertiary-container: #f4f3f3;
+  --color-error-dim: #5c1202;
+  --color-error: #9e422c;
+  --color-outline-variant: #acb3b4;
+  --color-primary-fixed: #e7e2d9;
+  --color-primary-dim: #55524c;
+  --color-surface-container-lowest: #ffffff;
+  --color-on-tertiary-fixed: #484a4a;
+  --color-secondary: #1c6d25;
+  --color-background: #f9f9f9;
+  --color-primary-fixed-dim: #d9d4cb;
+  --color-tertiary-fixed-dim: #e5e5e5;
+  --color-inverse-surface: #0c0f0f;
+  --color-on-primary-container: #54514b;
+  --color-surface-tint: #615e57;
+  --color-surface-container-highest: #dde4e5;
+  --color-inverse-primary: #fef9ef;
+  --color-error-container: #fe8b70;
+  --color-on-secondary-container: #065f18;
+  --color-on-primary: #fdf7ee;
+  --color-inverse-on-surface: #9c9d9d;
+  --color-outline: #757c7d;
+  --color-surface-bright: #f9f9f9;
+  --color-primary: #615e57;
+  --color-tertiary: #5e5f5f;
+  --color-surface-variant: #dde4e5;
+  --color-on-error: #fff7f6;
+  --color-surface-container-high: #e4e9ea;
+  --color-on-primary-fixed-variant: #5e5b54;
+  --color-secondary-dim: #096119;
+  --color-on-tertiary: #f9f9f9;
+  --color-on-secondary-fixed: #004b0f;
+  --color-on-error-container: #742410;
+  --color-on-secondary: #eaffe2;
+  --color-surface-dim: #d3dbdd;
+  --color-on-secondary-fixed-variant: #176a21;
+  --color-secondary-fixed-dim: #95e88f;
+  --color-on-surface: #2d3435;
+  --color-on-tertiary-container: #5a5c5c;
+  --color-secondary-fixed: #a3f69c;
+  --color-surface-container-low: #f2f4f4;
+  --color-surface-container: #ebeeef;
+  --color-tertiary-dim: #525354;
+
+  --font-inter: "Inter", sans-serif;
+  --font-headline: var(--font-inter);
+  --font-body: var(--font-inter);
+  --font-label: var(--font-inter);
+  --font-sans: var(--font-inter);
+  
+  --radius-DEFAULT: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-on-surface);
+    font-family: var(--font-inter);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.dark {
+  --color-secondary-container: #2E7D32;
+  --color-primary-container: #242424;
+  --color-on-surface-variant: #9CA3AF;
+  --color-on-primary-fixed: #E5E7EB;
+  --color-tertiary-fixed: #1F2937;
+  --color-surface: #191919;
+  --color-on-background: #F3F4F6;
+  --color-on-tertiary-fixed-variant: #9CA3AF;
+  --color-tertiary-container: #1F2937;
+  --color-error-dim: #7F1D1D;
+  --color-error: #EF4444;
+  --color-outline-variant: #374151;
+  --color-primary-fixed: #242424;
+  --color-primary-dim: #4B5563;
+  --color-surface-container-lowest: #121212;
+  --color-on-tertiary-fixed: #E5E7EB;
+  --color-secondary: #2E7D32;
+  --color-background: #191919;
+  --color-primary-fixed-dim: #374151;
+  --color-tertiary-fixed-dim: #111827;
+  --color-inverse-surface: #F9FAFB;
+  --color-on-primary-container: #E5E7EB;
+  --color-surface-tint: #2E7D32;
+  --color-surface-container-highest: #374151;
+  --color-inverse-primary: #191919;
+  --color-error-container: #991B1B;
+  --color-on-secondary-container: #FFFFFF;
+  --color-on-primary: #FFFFFF;
+  --color-inverse-on-surface: #191919;
+  --color-outline: #4B5563;
+  --color-surface-bright: #242424;
+  --color-primary: #2E7D32;
+  --color-tertiary: #4B5563;
+  --color-surface-variant: #242424;
+  --color-on-error: #FFFFFF;
+  --color-surface-container-high: #2A2A2A;
+  --color-on-primary-fixed-variant: #9CA3AF;
+  --color-secondary-dim: #1B5E20;
+  --color-on-tertiary: #FFFFFF;
+  --color-on-secondary-fixed: #FFFFFF;
+  --color-on-error-container: #FEE2E2;
+  --color-on-secondary: #FFFFFF;
+  --color-surface-dim: #121212;
+  --color-on-secondary-fixed-variant: #DCFCE7;
+  --color-secondary-fixed-dim: #14532D;
+  --color-on-surface: #F3F4F6;
+  --color-on-tertiary-container: #E5E7EB;
+  --color-secondary-fixed: #2E7D32;
+  --color-surface-container-low: #1F1F1F;
+  --color-surface-container: #242424;
+  --color-tertiary-dim: #374151;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .ghost-border {
+    border: 1px solid rgba(172, 179, 180, 0.15);
+  }
+}
+
+/* ─── High Contrast Typography Rules ─── */
+.high-contrast {
+  --color-on-surface: #000000;
+  --color-on-surface-variant: #111111;
+  --color-outline: #222222;
+  --color-outline-variant: #444444;
+}
+
+.dark.high-contrast, html.dark.high-contrast {
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #f3f4f6;
+  --color-outline: #e5e7eb;
+  --color-outline-variant: #9ca3af;
+}
+
+.high-contrast body,
+.high-contrast p,
+.high-contrast span,
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6,
+.high-contrast a,
+.high-contrast button,
+.high-contrast label,
+.high-contrast input,
+.high-contrast select,
+.high-contrast textarea,
+.high-contrast td,
+.high-contrast th {
+  font-weight: 600 !important;
+  letter-spacing: -0.01em;
+}
+
+.high-contrast .text-on-surface-variant {
+  color: var(--color-on-surface) !important;
+  opacity: 0.95;
+}
+
+/* ─── Skeleton shimmer animation ─── */
+@keyframes skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton-shimmer {
+  --skeleton-base: #e0e0e0;
+  --skeleton-shimmer: rgba(255, 255, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  background-color: var(--skeleton-base);
+  display: inline-block;
+}
+
+.skeleton-shimmer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--skeleton-shimmer),
+    transparent
+  );
+  animation: skeleton-shimmer 1.5s ease-in-out infinite;
+}
+
+/* Dark mode skeleton colors */
+.dark .skeleton-shimmer {
+  --skeleton-base: #2a2a2a;
+  --skeleton-shimmer: rgba(255, 255, 255, 0.08);
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer::after {
+    animation: none;
+  }
+}
+
+/* SVG arc animation — kept because Framer Motion handles these via motion.path/circle */
+@keyframes arc-sweep {
+  from {
+    stroke-dashoffset: var(--arc-length);
+  }
+  to {
+    stroke-dashoffset: var(--arc-offset);
+  }
 }

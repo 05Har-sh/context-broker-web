@@ -30,8 +30,35 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
+# env files (strict ignore for all secrets & envs, allow only example)
 .env*
+!.env.example
+
+# secrets, keys & certificates
+*.pem
+*.key
+*.cert
+*.crt
+*.pfx
+*.p12
+id_rsa*
+*.pub
+
+# IDE & Editor settings
+.vscode/*
+!.vscode/extensions.json
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# OS metadata
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Prototype & scratch static exports (HTML previews)
+*.html
+!public/**/*.html
 
 # vercel
 .vercel
@@ -39,3 +66,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
